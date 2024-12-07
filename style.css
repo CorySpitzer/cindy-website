@@ -33,6 +33,10 @@ header p {
     text-align: center;
 } */
 
+h1 {
+    font-size: 65px;
+}
+
 nav {
     position: relative;
     width: 100%;
@@ -178,6 +182,10 @@ footer a:hover {
     nav a {
         margin: 0 10px;
         font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 30px;
     }
 }
 
