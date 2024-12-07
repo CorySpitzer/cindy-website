@@ -56,6 +56,66 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
+.book-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;  /* Firefox */
+}
+
+.book-banner::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Edge */
+}
+
+.book-banner a {
+    flex: 0 0 auto;
+}
+
+.book-banner img {
+    height: 150px;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.book-banner img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .book-banner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .book-banner img {
+        height: 80px;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-banner {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        padding: 5px;
+    }
+    
+    .book-banner img {
+        height: 60px;
+    }
+}
+
 .hero {
     width: 100%;
     background-color: #4c748b;
@@ -157,7 +217,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 1200px) {
     .book {
         flex: 1 1 calc(33.33% - 20px);
@@ -186,6 +245,15 @@ footer a:hover {
 
     h1 {
         font-size: 30px;
+    }
+    
+    .book-banner {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .book-banner img {
+        height: 120px;
     }
 }
 
