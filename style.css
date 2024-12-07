@@ -15,26 +15,46 @@ body .about-body {
     min-height: 100vh;
 }
 header {
-    background-color: #4c748b;
+    position: relative;
+    background-image: url('Autumn-Leaves.PNG');
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 20px 10px;
+    padding: 40px 10px;
     text-align: center;
 }
+
+/* Dark overlay for better text readability */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Ensure text stays above the overlay */
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
+
 header h1 {
     margin: 0;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: bold;
 }
+
 header p {
     font-style: italic;
     margin-top: 10px;
-}
-/* nav {
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-} */
-
-h1 {
-    font-size: 65px;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.5px;
 }
 
 nav {
