@@ -16,7 +16,7 @@ body .about-body {
 }
 header {
     position: relative;
-    background-image: url('Autumn-Leaves.PNG');
+    background-image: url('images/Background.png');
     background-size: cover;
     background-position: center;
     color: white;
