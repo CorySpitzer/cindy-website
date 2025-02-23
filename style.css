@@ -430,7 +430,7 @@ footer a:hover {
 .theme-toggle {
     position: fixed;
     top: 20px;
-    right: 70px; /* Space for hamburger menu */
+    right: 20px;
     z-index: 1000;
     background: none;
     border: none;
@@ -456,9 +456,9 @@ footer a:hover {
 .hamburger {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 70px;
     z-index: 1000;
-    display: none; /* Hidden by default, shown in mobile */
+    display: none;
     font-size: 24px;
     cursor: pointer;
     width: 40px;
@@ -472,7 +472,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .hamburger {
-        display: flex; /* Only show on mobile */
+        display: flex;
     }
     
     #nav-menu {
