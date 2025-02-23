@@ -149,6 +149,24 @@ nav a:hover {
     }
 }
 
+@media (max-width: 1270px) {
+    .book-banner img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .book-banner img {
+        height: 90px;
+    }
+}
+
+@media (max-width: 850px) {
+    .book-banner img {
+        height: 80px;
+    }
+}
+
 .hero {
     width: 100%;
     background-color: #4c748b;
