@@ -111,6 +111,15 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+#banner-title {
+    margin: 0;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: bold;
+    font-family: 'Lucida Calligraphy', cursive;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .book-banner {
         display: grid;
@@ -200,7 +209,7 @@ p {
     box-sizing: border-box;
 }
 .book img {
-    max-width: 150px;
+    max-width: 80px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
