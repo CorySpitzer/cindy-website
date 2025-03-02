@@ -344,6 +344,10 @@ footer a:hover {
     display: block;
 }
 
+.dropdown.show-dropdown .dropdown-content {
+    display: block;
+}
+
 .dropdown-content a {
     color: white;
     padding: 12px 16px;
@@ -354,6 +358,135 @@ footer a:hover {
 
 .dropdown-content a:hover {
     background-color: #444;
+}
+
+.dropdown-toggle {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: #4c748b;
+}
+
+.dropdown.active .dropdown-toggle {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.dropdown-toggle.button {
+    background-color: var(--nav-bg);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle.button:hover {
+    background-color: var(--link-color);
+}
+
+.dropdown-toggle.button:active {
+    transform: translateY(2px);
+}
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    z-index: 1000;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: var(--nav-text);
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: black;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    #nav-menu a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        color: white;
+        text-decoration: none;
+    }
+    
+    #nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Show the menu when active */
+#nav-menu.active {
+    display: flex;
+}
+
+/* Form Styles */
+input, textarea {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--input-text);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--link-color);
+}
+
+button {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--link-color);
+}
+
+/* Link Styles */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
 }
 
 @media (max-width: 1200px) {
@@ -450,100 +583,4 @@ footer a:hover {
     width: 24px;
     height: 24px;
     fill: var(--nav-text);
-}
-
-/* Hamburger Menu Styles */
-.hamburger {
-    position: absolute;
-    top: 20px;
-    right: 70px;
-    z-index: 1000;
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-    color: var(--nav-text);
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: black;
-        color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-    
-    #nav-menu a {
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid #ccc;
-        color: white;
-        text-decoration: none;
-    }
-    
-    #nav-menu a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-}
-
-/* Show the menu when active */
-#nav-menu.active {
-    display: flex;
-}
-
-/* Form Styles */
-input, textarea {
-    background-color: var(--input-bg);
-    border: 1px solid var(--input-border);
-    color: var(--input-text);
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--link-color);
-}
-
-button {
-    background-color: var(--nav-bg);
-    color: var(--nav-text);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--link-color);
-}
-
-/* Link Styles */
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--link-hover);
 }
