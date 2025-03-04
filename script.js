@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const servicePages = [
         'get-your-book-done.html',
         'zen-do-ism.html',
-        'black-swan-strategies.html'
+        'black-swan-strategies.html',
+        'new-service-page.html',
+        'another-service-page.html'
     ];
     
     // Check if current page is a service page
