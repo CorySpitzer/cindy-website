@@ -101,4 +101,16 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.classList.add('active');
         }
     }
+    
+    // Mobile service links functionality
+    const mobileServiceLinks = document.querySelectorAll('.mobile-service-link');
+    mobileServiceLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const serviceName = this.getAttribute('data-service-name');
+            const serviceLink = document.querySelector(`.service-link[data-service-name="${serviceName}"]`);
+            if (serviceLink) {
+                serviceLink.click();
+            }
+        });
+    });
 });
