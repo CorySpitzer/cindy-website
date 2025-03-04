@@ -123,24 +123,33 @@ nav a:hover {
 
 .book-banner {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 20px;
     padding: 20px;
     background-color: var(--book-banner-bg);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-    white-space: nowrap;
+    overflow: hidden;
     position: relative;
     width: 100%;
     box-sizing: border-box;
 }
 
-.book-banner::-webkit-scrollbar {
-    display: none;
+.book-banner-inner {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50%));
+    }
+}
+
+.book-banner:hover .book-banner-inner {
+    animation-play-state: paused;
 }
 
 .book-banner a {
@@ -169,9 +178,11 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .book-banner {
-        display: flex;
-        gap: 10px;
         padding: 10px;
+    }
+    
+    .book-banner-inner {
+        gap: 10px;
     }
     
     .book-banner img {
@@ -182,8 +193,11 @@ nav a:hover {
 
 @media (max-width: 480px) {
     .book-banner {
-        gap: 5px;
         padding: 5px;
+    }
+    
+    .book-banner-inner {
+        gap: 5px;
     }
     
     .book-banner img {

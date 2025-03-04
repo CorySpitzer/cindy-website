@@ -49,54 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Book Banner Carousel functionality
     const bookBanner = document.querySelector('.book-banner');
     if (bookBanner) {
-        // Clone the books to create a seamless loop
-        const books = bookBanner.querySelectorAll('a');
+        const bookBannerInner = document.querySelector('.book-banner-inner');
+        
+        // Clone all books and append them to create a continuous scroll
+        // This creates a second set of books that will appear after the first set
+        // When the animation moves to show the second set, it will look like the first set is continuing
+        const books = Array.from(bookBannerInner.querySelectorAll('a'));
         books.forEach(book => {
             const clone = book.cloneNode(true);
-            bookBanner.appendChild(clone);
+            bookBannerInner.appendChild(clone);
         });
         
-        // Variables for the carousel
-        let scrollPosition = 0;
-        const scrollSpeed = 1; // pixels per frame
-        let animationId;
-        let isPaused = false;
-        
-        // Function to scroll the banner
-        function scrollBanner() {
-            if (!isPaused) {
-                scrollPosition += scrollSpeed;
-                
-                // Reset position when we've scrolled through half the content (the original books)
-                if (scrollPosition >= (bookBanner.scrollWidth / 2)) {
-                    scrollPosition = 0;
-                }
-                
-                bookBanner.scrollLeft = scrollPosition;
-            }
-            animationId = requestAnimationFrame(scrollBanner);
-        }
-        
-        // Start the carousel
-        animationId = requestAnimationFrame(scrollBanner);
-        
-        // Pause on hover or touch
-        bookBanner.addEventListener('mouseenter', () => {
-            isPaused = true;
-        });
-        
-        bookBanner.addEventListener('mouseleave', () => {
-            isPaused = false;
-        });
-        
-        // For touch devices
-        bookBanner.addEventListener('touchstart', () => {
-            isPaused = true;
-        });
-        
-        bookBanner.addEventListener('touchend', () => {
-            isPaused = false;
-        });
+        // Adjust animation duration based on the number of books
+        const totalBooks = books.length;
+        const animationDuration = totalBooks * 3; // 3 seconds per book
+        bookBannerInner.style.animationDuration = `${animationDuration}s`;
     }
     
     // Make Services dropdown clickable to show dropdown content
