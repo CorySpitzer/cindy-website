@@ -123,7 +123,7 @@ nav a:hover {
 
 .book-banner {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
     padding: 20px;
@@ -132,6 +132,11 @@ nav a:hover {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .book-banner::-webkit-scrollbar {
@@ -140,6 +145,7 @@ nav a:hover {
 
 .book-banner a {
     flex: 0 0 auto;
+    margin: 0 10px;
 }
 
 .book-banner img {
@@ -163,8 +169,7 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .book-banner {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
         gap: 10px;
         padding: 10px;
     }
@@ -177,7 +182,6 @@ nav a:hover {
 
 @media (max-width: 480px) {
     .book-banner {
-        grid-template-columns: repeat(4, 1fr);
         gap: 5px;
         padding: 5px;
     }

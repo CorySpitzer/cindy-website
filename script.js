@@ -46,6 +46,59 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme on page load
     initTheme();
     
+    // Book Banner Carousel functionality
+    const bookBanner = document.querySelector('.book-banner');
+    if (bookBanner) {
+        // Clone the books to create a seamless loop
+        const books = bookBanner.querySelectorAll('a');
+        books.forEach(book => {
+            const clone = book.cloneNode(true);
+            bookBanner.appendChild(clone);
+        });
+        
+        // Variables for the carousel
+        let scrollPosition = 0;
+        const scrollSpeed = 1; // pixels per frame
+        let animationId;
+        let isPaused = false;
+        
+        // Function to scroll the banner
+        function scrollBanner() {
+            if (!isPaused) {
+                scrollPosition += scrollSpeed;
+                
+                // Reset position when we've scrolled through half the content (the original books)
+                if (scrollPosition >= (bookBanner.scrollWidth / 2)) {
+                    scrollPosition = 0;
+                }
+                
+                bookBanner.scrollLeft = scrollPosition;
+            }
+            animationId = requestAnimationFrame(scrollBanner);
+        }
+        
+        // Start the carousel
+        animationId = requestAnimationFrame(scrollBanner);
+        
+        // Pause on hover or touch
+        bookBanner.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        
+        bookBanner.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+        
+        // For touch devices
+        bookBanner.addEventListener('touchstart', () => {
+            isPaused = true;
+        });
+        
+        bookBanner.addEventListener('touchend', () => {
+            isPaused = false;
+        });
+    }
+    
     // Make Services dropdown clickable to show dropdown content
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     if (dropdownToggle) {
