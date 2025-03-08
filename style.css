@@ -101,6 +101,35 @@ h1, h2 {
     font-style: italic;
 }
 
+/* Triangle/arrow bullet points */
+ul.triangle-bullets {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+ul.triangle-bullets li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+ul.triangle-bullets li::before {
+    content: "▶";  /* Unicode triangle character */
+    position: absolute;
+    left: -1.5em;
+    color: #4c748b;  /* Using the same color as nav hover */
+}
+
+/* Indented list class */
+.indented {
+    margin-left: 2em;
+}
+
+.underlined {
+    border-bottom: 2px solid #4c748b;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
 nav {
     background-color: var(--nav-bg);
     padding: 10px;
@@ -242,12 +271,25 @@ nav a:hover {
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    /* Font family and style are inherited from global h1, h2 rule */
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    /* Font family is inherited from global h1, h2 rule */
 }
 
 .hero p {
     font-size: 1.2rem;
     font-style: italic;
+}
+
+/* Page title styling */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Lucida Calligraphy", cursive;
 }
 
 /* About Content Section */
