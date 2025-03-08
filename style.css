@@ -220,6 +220,14 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 40px;
+    }
+    
+    header p {
+        font-size: 1.1em;
+    }
+    
     .book-banner {
         padding: 10px;
     }
@@ -319,11 +327,13 @@ nav a:hover {
 
 .container {
     max-width: 1200px;
+    width: 95%;
     margin: 20px auto;
     padding: 20px;
     background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--card-shadow);
+    overflow-x: hidden;
 }
 
 p {
@@ -790,5 +800,78 @@ a:hover {
     nav a {
         margin: 0 8px;
         font-size: 0.95em;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    main {
+        font-size: 0.95em;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    h3 {
+        font-size: 1.3em;
+    }
+    
+    ul {
+        padding-left: 20px;
+    }
+    
+    .indented {
+        margin-left: 1em;
+    }
+    
+    .info-button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+    
+    main {
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+    }
+    
+    ul.triangle-bullets li::before {
+        left: -1.2em;
+    }
+    
+    ul.triangle-bullets {
+        padding-left: 1.2em;
+    }
+    
+    .indented {
+        margin-left: 0.5em;
     }
 }
