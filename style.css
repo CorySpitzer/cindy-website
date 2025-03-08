@@ -593,6 +593,27 @@ button:hover {
     background-color: var(--link-color);
 }
 
+/* Info button style */
+.info-button {
+    display: inline-block;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: var(--link-color);
+    color: var(--nav-text);
+    text-decoration: none;
+}
+
 /* Link Styles */
 a {
     color: var(--link-color);
