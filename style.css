@@ -101,6 +101,12 @@ h1, h2 {
     font-style: italic;
 }
 
+/* Regular headers without special font */
+.regular-header {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+}
+
 /* Triangle/arrow bullet points */
 ul.triangle-bullets {
     list-style: none;
@@ -608,10 +614,28 @@ button:hover {
     transition: background-color 0.3s ease;
 }
 
+[data-theme="dark"] .info-button {
+    background-color: #4c748b;  /* Lighter blue in dark mode */
+    color: white;
+}
+
 .info-button:hover {
     background-color: var(--link-color);
     color: var(--nav-text);
     text-decoration: none;
+}
+
+[data-theme="dark"] .info-button:hover {
+    background-color: #5d8ba6;  /* Even lighter blue on hover in dark mode */
+}
+
+.button-container {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.centered {
+    text-align: center;
 }
 
 /* Link Styles */
