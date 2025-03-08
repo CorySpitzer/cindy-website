@@ -30,9 +30,13 @@
     <main class="container">
         <div class="hero">
             <h1>Let's Talk</h1>
+            <h2>
+                Email Cindy: <a href="mailto:cindy@cindyspitzer.com">cindy@cindyspitzer.com</a>
+            </h2>
+            <p>or use the form below to open your email client:</p>
         </div>
         <section class="contact-form">
-            <form id="contact-form">
+            <form id="contact-form" onsubmit="openMailClient(event)">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -56,5 +60,24 @@
     <footer>
         <p>&copy; 2025 Cindy Spitzer. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function openMailClient(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create the body content without encoding line breaks yet
+            const bodyContent = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            
+            // Use encodeURIComponent for both subject and body
+            const mailtoLink = `mailto:cindy@cindyspitzer.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+            
+            window.open(mailtoLink);
+        }
+    </script>
 </body>
 </html>
