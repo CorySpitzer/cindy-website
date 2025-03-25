@@ -11,6 +11,9 @@
     --input-text: #333;
     --link-color: #3e60c5;
     --link-hover: #2a4494;
+    --button-bg: #e83e8c; /* Pink button background */
+    --button-text: white; /* White text on pink background */
+    --button-hover-bg: #d5267a; /* Darker pink on hover */
 }
 
 [data-theme="dark"] {
@@ -26,6 +29,9 @@
     --input-text: #e0e0e0;
     --link-color: #6b8eff;
     --link-hover: #8ba4ff;
+    --button-bg: #e83e8c; /* Same pink button background in dark mode */
+    --button-text: white; /* Same white text in dark mode */
+    --button-hover-bg: #d5267a; /* Same darker pink on hover in dark mode */
 }
 
 * {
@@ -298,12 +304,12 @@ nav a:hover {
     background-color: var(--card-bg);
     color: var(--text-color);
     text-align: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-style: italic;
     text-align: center;
@@ -313,6 +319,12 @@ nav a:hover {
 .hero p {
     font-size: 1.2rem;
     font-style: italic;
+    margin-top: 0;
+}
+
+.hero h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 /* Page title styling */
@@ -631,8 +643,8 @@ button:hover {
 /* Info button style */
 .info-button {
     display: inline-block;
-    background-color: var(--nav-bg);
-    color: var(--nav-text);
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -640,22 +652,32 @@ button:hover {
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-[data-theme="dark"] .info-button {
-    background-color: #4c748b;  /* Lighter blue in dark mode */
-    color: white;
-}
-
-.info-button:hover {
-    background-color: var(--link-color);
-    color: var(--nav-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
 }
 
-[data-theme="dark"] .info-button:hover {
-    background-color: #5d8ba6;  /* Even lighter blue on hover in dark mode */
+/* Dark mode button styling is handled by CSS variables */
+
+.info-button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-text);
+    text-decoration: none;
+}
+
+/* Dark mode button hover styling is handled by CSS variables */
+
+/* Button styling now uses the same colors in both light and dark modes */
+
+/* Styling for inline text links */
+.text-link {
+    color: var(--button-bg);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    text-decoration: underline;
 }
 
 .button-container {
