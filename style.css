@@ -147,7 +147,7 @@ ul.triangle-bullets li::before {
     content: "▶";  /* Unicode triangle character */
     position: absolute;
     left: -1.5em;
-    color: #4c748b;  /* Using the same color as nav hover */
+    color: var(--text-color);  /* Using text color (black in light mode, white in dark mode) */
 }
 
 /* Indentation classes */
