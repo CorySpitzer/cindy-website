@@ -83,8 +83,6 @@ header h1 {
     font-size: 65px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     font-weight: bold;
-    font-family: "Lucida Calligraphy", cursive;
-    font-style: italic;
 }
 
 header p {
@@ -95,16 +93,16 @@ header p {
     letter-spacing: 0.5px;
 }
 
-/* Global heading styles */
+/* Global heading styles - now using regular font by default */
 h1, h2 {
-    font-family: "Lucida Calligraphy", cursive;
-    font-style: italic;
-}
-
-/* Regular headers without special font */
-.regular-header {
     font-family: Arial, sans-serif;
     font-style: normal;
+}
+
+/* Banner title with special font */
+.banner-title {
+    font-family: "Lucida Calligraphy", cursive;
+    font-style: italic;
 }
 
 /* Triangle/arrow bullet points */
