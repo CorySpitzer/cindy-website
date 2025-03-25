@@ -105,23 +105,24 @@ h1, h2 {
     font-style: italic;
 }
 
-/* Centered content with big indent */
+/* Centered div with big indent, but left-justified text */
 .centered-big-indent {
-    text-align: center;
     margin: 30px auto;
     padding: 0 15%;
     font-size: 1.2em;
     line-height: 2;
+    text-align: left;
 }
 
 .centered-big-indent a {
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--text-color);
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .centered-big-indent a:hover {
-    color: var(--link-hover);
+    color: var(--text-color);
     text-decoration: underline;
 }
 
