@@ -150,8 +150,12 @@ ul.triangle-bullets li::before {
     color: #4c748b;  /* Using the same color as nav hover */
 }
 
-/* Indented list class */
+/* Indentation classes */
 .indented {
+    margin-left: 2em;
+}
+
+.double-indented {
     margin-left: 2em;
 }
 
