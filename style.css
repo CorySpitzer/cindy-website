@@ -672,6 +672,12 @@ button:hover {
 
 /* Button styling now uses the same colors in both light and dark modes */
 
+/* Larger font size for paragraphs and list items on the Cindy Who page */
+.larger-font {
+    font-size: 1.35rem; /* Significantly larger font size */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
 /* Styling for inline text links */
 .text-link {
     color: var(--button-bg);
