@@ -30,10 +30,10 @@
     <main class="container">
         <div class="hero">
             <h1>Let's Talk</h1>
-            <h2>
+            <!-- <h2>
                 Email Cindy: <a href="mailto:cindy@cindyspitzer.com">cindy@cindyspitzer.com</a>
             </h2>
-            <p>or use the form below to open your email client:</p>
+            <p>or use the form below to open your email client:</p> -->
         </div>
         <section class="contact-form">
             <form id="contact-form" onsubmit="openMailClient(event)">
@@ -46,6 +46,10 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Optional">
+                </div>
+                <div class="form-group">
                     <label for="subject">Subject:</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
@@ -56,6 +60,7 @@
                 <button type="submit" class="button">Send Message</button>
             </form>
         </section>
+        <p class="centered">Email Cindy: <a href="mailto:cindy@cindyspitzer.com">cindy@cindyspitzer.com</a></p>
     </main>
     <footer>
         <p>&copy; 2025 Cindy Spitzer. All Rights Reserved.</p>
@@ -67,11 +72,12 @@
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
             // Create the body content without encoding line breaks yet
-            const bodyContent = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            const bodyContent = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\n${message}`;
             
             // Use encodeURIComponent for both subject and body
             const mailtoLink = `mailto:cindy@cindyspitzer.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
