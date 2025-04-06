@@ -653,14 +653,16 @@ button:hover {
     background-color: var(--button-bg);
     color: var(--button-text);
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 30px; /* Increased padding for larger button */
+    border-radius: 6px; /* Slightly larger border radius */
     cursor: pointer;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: 600; /* Semi-bold text */
 }
 
 /* Dark mode button styling is handled by CSS variables */
