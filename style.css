@@ -733,46 +733,28 @@ a:hover {
 }
 
 .hamburger {
-    position: absolute;
-    top: 20px;
-    right: 70px;
-    z-index: 1000;
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-    color: var(--nav-text);
-    align-items: center;
-    justify-content: center;
+    display: none; /* Hide the hamburger menu completely */
 }
 
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    
+    /* Keep navigation visible and horizontal on mobile */
     #nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: black;
-        color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        background-color: var(--nav-bg);
+        padding: 10px 0;
+        flex-wrap: wrap; /* Allow items to wrap on very small screens */
     }
     
     #nav-menu a {
-        padding: 15px;
+        padding: 8px 12px;
         text-align: center;
-        border-bottom: 1px solid #ccc;
-        color: white;
+        border-bottom: none;
+        color: var(--nav-text);
         text-decoration: none;
+        margin: 0 5px;
     }
     
     #nav-menu a:hover {
@@ -780,9 +762,9 @@ a:hover {
     }
 }
 
-/* Show the menu when active */
+/* Remove the active class since we don't need it anymore */
 #nav-menu.active {
-    display: flex;
+    display: flex; /* This is redundant now but kept for compatibility */
 }
 
 @media (max-width: 1200px) {
