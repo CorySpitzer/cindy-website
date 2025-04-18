@@ -64,6 +64,7 @@ header {
     padding: 40px 10px;
     text-align: center;
     z-index: 1;
+    margin-bottom: 0; /* Ensure no bottom margin */
 }
 
 /* Dark overlay for better text readability */
@@ -174,6 +175,7 @@ nav {
     row-gap: 20px;
     column-gap: 15px;
     box-shadow: 0 4px 8px var(--card-shadow);
+    margin-top: 0; /* Ensure no top margin */
 }
 
 nav a {
